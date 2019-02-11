@@ -2,10 +2,11 @@ import React from "react";
 import {render} from "react-dom";
 import {Header} from "./components/Header";
 import {Home} from "./components/Home";
+import {Ager} from "./components/Ager";
 
 class App extends React.Component {
     render() {
-        const hobbies = ["being", "better", "than", "tristan"];
+        const hobbies = ["programming", "learning", "doing"];
         return (
             <div className="container">
                 <Header/>
@@ -13,10 +14,7 @@ class App extends React.Component {
                     <Home name={"Mike"} hobbies={hobbies}/>
                 </div>
                 <div className="col-xs-10 col-xs-offset-1">
-                    <Home/>
-                </div>
-                <div className="col-xs-10 col-xs-offset-1">
-                    <Home/>
+                    <Ager age={12}/>
                 </div>
             </div>
         );
