@@ -18,7 +18,7 @@ var config = {
                 include: SRC_DIR,
                 loader: "babel-loader",
                 query: {
-                    presets: ['env', 'react', 'stage-0']
+                    presets: ['@babel/react', '@babel/preset-env']
                 }
             }
         ]
