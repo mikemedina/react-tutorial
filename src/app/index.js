@@ -1,24 +1,23 @@
 import React from "react";
 import {render} from "react-dom";
-import {Header} from "./components/Header";
 import {Home} from "./components/Home";
-import {Ager} from "./components/Ager";
+import {About} from "./components/About";
+import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 
-class App extends React.Component {
-    render() {
-        const hobbies = ["programming", "learning", "doing"];
-        return (
-            <div className="container">
-                <Header/>
-                <div className="col-xs-10 col-xs-offset-1">
-                    <Home name={"Mike"} hobbies={hobbies}/>
+
+const App = () => {
+    return (
+        <div>
+            <Router>
+                <div>
+                    <Link to={"home"}>Home</Link>
+                    <Link to={"about"}>About</Link>
+                    <Route path="home" component={Home}/>
+                    <Route path="about" component={About}/>
                 </div>
-                <div className="col-xs-10 col-xs-offset-1">
-                    <Ager age={12}/>
-                </div>
-            </div>
-        );
-    }
-}
+            </Router>
+        </div>
+    );
+};
 
 render(<App/>, window.document.getElementById("app"));
